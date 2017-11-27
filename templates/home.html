@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}장고 블로그{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="content_home">
+
+    <div id="homeimg">
+        <a href="/"><img src="{% static 'img/NUESTW_HERE.jpg' %}" style="height:256px;"/></a>
+        <h4 style="margin: 0;">1조 장고사이트</h4>
+    </div>
+
+    <hr style="margin: 5px 0;">
+
+    <h2>앱을 선택해주세요</h2>
+
+    <table id="applist">
+        <tr>
+        <td><b><i><a href="{% url 'bookmark:index' %}">북마크</a></i><b></td>
+        <td>즐겨 찾기 응용 프로그램을 사용하여 즐겨 찾기를 저장할 수 있습니다. 북마크를 업데이트하거나 삭제할 수도 있습니다.</td>
+        <td class="Edit"><i><a href="{% url 'bookmark:add' %}">추가</a></i></td>
+        <td class="Edit"><i><a href="{% url 'bookmark:change' %}">변경</a></i></td>
+        </tr>
+
+        <tr>
+        <td><b><i><a href="{% url 'blog:index' %}">블로그</a></i><b></td>
+        <td>이 응용 프로그램은 일상적인 이벤트를 기록하거나 취미, 기법 등의 관심사를 작성할 수 있게 해 줍니다.</td>
+        <td class="Edit"><i><a href="{% url 'blog:add' %}">추가</a></i></td>
+        <td class="Edit"><i><a href="{% url 'blog:change' %}">변경</a></i></td>
+        </tr>
+
+        <tr>
+        <td><b><i><a href="{% url 'photo:index' %}">사진</a></i><b></td>
+        <td>이 응용 프로그램을 통해 자신만의 사진을 업로드할 수 있습니다. 앨범을 삭제하면 해당 앨범의 모든 사진이 삭제됩니다.</td>
+        <td class="Edit"><i><a href="{% url 'photo:album_add' %}">추가</a></i></td>
+        <td class="Edit"><i><a href="{% url 'photo:album_change' %}">변경</a></i></td>
+        </tr>
+
+        <tr>
+        <td><b><i><a href="{% url 'polls:index' %}">설문</a></i><b></td>
+        <td>이 응용 프로그램을 통해 자신만의 설문조사를 만들 수 있습니다.</td>
+        <td class="Edit"><i><a href="">추가</a></i></td>
+        <td class="Edit"><i><a href="">변경</a></i></td>
+        </tr>
+    </table>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+    &copy; 조혜영 | 문혜리 | 정현진
+</div>
+{% endblock footer %}
